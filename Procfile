@@ -1,2 +1,2 @@
-web: nodemon server/index.js
-setup: npm run react-dev
+setup: npm run react-$ENV
+web: npm run server-$ENV

@@ -1,8 +1,9 @@
 import $ from 'jquery';
+var React = require('react');
 
 var ajaxGet = (updateState) => {
   $.ajax({
-    url: 'http://127.0.0.1:1128/repos',
+    url: SERVER + ':' + PORT + '/repos/', //'http://localhost:5000/repos/',
     method: 'GET',
     success: (data) =>{
       console.log('Success: ', data);

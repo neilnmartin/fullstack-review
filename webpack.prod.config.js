@@ -22,7 +22,7 @@ module.exports = {
     ]
   },
   plugins: [new webpack.DefinePlugin({
-    'SERVER': JSON.stringify(process.env.SERVER) || JSON.stringify('http://localhost'),
-    'PORT' : JSON.stringify(process.env.PORT) || JSON.stringify('5000')
+    'SERVER': JSON.stringify('https://heroku-github-fetcher.herokuapp.com/'),
+    'PORT' : JSON.stringify('80')
   })],
 };

@@ -4,8 +4,8 @@
   "description": "This is Tariq's github fetcher app",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "react-dev": "webpack -d --watch",
+    "react-dev": "webpack -d --watch --config webpack.config.js",
+    "react-prod": "webpack -d --watch --config webpack.prod.config.js",
     "server-dev": "nodemon server/index.js",
     "db-start": "mongod --dbpath ./database/data/db"
   },

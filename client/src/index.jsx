@@ -4,8 +4,8 @@ import $ from 'jquery';
 import Search from './components/Search.jsx';
 import RepoList from './components/RepoList.jsx';
 //import RepoListEntry from './components/RepoListEntry.jsx';
-import ajaxPost from './helpers/post.js';
-import ajaxGet from './helpers/get.js';
+import ajaxPost from './helpers/post.jsx';
+import ajaxGet from './helpers/get.jsx';
 
 class App extends React.Component {
   constructor(props) {

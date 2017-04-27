@@ -80,7 +80,14 @@ app.get('/repos', function (req, res) {
   });
 });
 
-var port = process.env.PORT || 1128;
+app.get('/env.js', function(req, res){
+    res.send(`
+      var SERVER="${process.env.SERVER}",
+      var PORT="${process.env.PORT}",
+      `);
+});
+
+var port = process.env.PORT || 5000;
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);

@@ -1,11 +1,11 @@
 import $ from 'jquery';
-
+var React = require('react');
 
 var ajaxPost = (username, updateState) => {
   var data = JSON.stringify({username: username});
   console.log('Posting data: ', data);
   $.ajax({
-    url: 'http://127.0.0.1:1128/repos/import',
+    url: SERVER + ':' + PORT + '/repos/import', //'http://localhost:5000/repos/import',
     method: 'POST',
     contentType: 'application/json',
     processData: false,
@@ -16,6 +16,7 @@ var ajaxPost = (username, updateState) => {
     },
     error: (data) => {
       console.log('POST error: ', data);
+      console.log(SERVER, PORT);
     }
   });
 };

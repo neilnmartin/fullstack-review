@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Search from './components/Search.jsx';
 import RepoList from './components/RepoList.jsx';
+//import RepoListEntry from './components/RepoListEntry.jsx';
+import ajaxPost from './helpers/post.js';
+import ajaxGet from './helpers/get.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,19 +13,32 @@ class App extends React.Component {
     this.state = { 
       repos: []
     }
+    this.fetch = this.fetch.bind(this);
+    this.search = this.search.bind(this);
+    this.updateState =this.updateState.bind(this);
 
+    this.fetch();
+  }
+
+  fetch(){
+    ajaxGet(this.updateState);
+  }
+
+  updateState (data) {
+    console.log('Updating state: ', data);
+    this.setState({repos: data});
   }
 
   search (term) {
     console.log(`${term} was searched`);
-    // TODO
+    ajaxPost(term, this.fetch);
   }
 
   render () {
     return (<div>
       <h1>Github Fetcher</h1>
       <RepoList repos={this.state.repos}/>
-      <Search onSearch={this.search.bind(this)}/>
+      <Search onSearch={this.search}/>
     </div>)
   }
 }

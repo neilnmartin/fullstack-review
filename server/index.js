@@ -54,9 +54,11 @@ app.post('/repos/import', function (req, res) {
               newRepo.save()
               .then(function (repo) {
                 console.log('Saved repo to DB successfully: ', repo.repo_name);
+                res.status(201).send();
               })
               .catch(function(err){
                 console.log('DB save error: ', err);
+                res.status(303).send();
               });
             }
           }
@@ -65,7 +67,6 @@ app.post('/repos/import', function (req, res) {
           console.log('Github API fetch error: ', err);
           res.status(400).send();
       });
-  res.status(200).send();
 });
 
 app.get('/repos', function (req, res) {

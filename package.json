@@ -1,7 +1,7 @@
 {
   "name": "github-fetcher-fullstack-v2",
   "version": "1.0.0",
-  "description": "This is Tariq's fetcher app",
+  "description": "This is Tariq's github fetcher app",
   "main": "index.js",
   "scripts": {
     "start": "node server/index.js",
